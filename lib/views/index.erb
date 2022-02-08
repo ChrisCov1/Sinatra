@@ -4,15 +4,14 @@
   </head>
   <body>
     <h1>Mon super site de gossip, depuis le dossier views !</h1>
-    puts 'Bienvenue, '
-    puts 'Quel est ton nom'
-    name = gets.chomp
-    puts 'Bienvenue, #{name}'
-
-    class Gossip
-    <a href="/gossips/new/">Rihanna est enceinte</a>
-
-
+     <a href="/gossips/new/">Créer un gossip</a>
+    <h1>Liste des potins :</h1>
+    <% gossips.each_with_index do |gossip, index| %>
+      <a href="/<%= index %>">
+        <%= gossip.author %><br/>
+        <%= gossip.content %>
+      </a>
+    <% end %>
   </body>
 
 </html>
